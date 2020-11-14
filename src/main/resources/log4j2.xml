@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+<Appenders>
+    <Console name="Console" target="SYSTEM_ERR">
+        <PatternLayout pattern="${env:HOST:-localhost} %d %-5p [%t] %c{1}.%m%n"/>
+    </Console>
+</Appenders>
+<Loggers>
+    <Root level="info">
+        <AppenderRef ref="Console"/>
+    </Root>
+    <Logger name="org.eclipse.jetty" level="warn" additivity="false">
+        <AppenderRef ref="Console"/>
+    </Logger>
+</Loggers>
+</Configuration>
